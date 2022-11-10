@@ -6,6 +6,8 @@ import org.springframework.context.annotation.Configuration;
 import sample01.MessageBeanImpl;
 import sample02.CalcAdd;
 import sample02.CalcMul;
+import sample03.SungJukDTO;
+import sample03.SungJukImpl;
 
 //applicationContext.xml역활을 하는 자바 파일임 즉, 빈을 (생성)만들어주는 자바 파일
 //환경설정의미 (일반 자바 파일이 아님을 알려주는 @)
@@ -21,9 +23,17 @@ public class SpringConfiguration {
 		return new CalcAdd(30,50);
 	}
 	
-	@Bean(name="calcMul")
+	@Bean(name="calcMul") //자바 문법 충실 버젼.
 	public CalcMul gtCalcMul() {
 		return new CalcMul();
+	}
+	@Bean
+	public SungJukDTO sungJukDTO() {
+		return new SungJukDTO();
+	}
+	@Bean
+	public SungJukImpl sungJukImpl() {
+		return new SungJukImpl(sungJukDTO());
 	}
 }
 /*

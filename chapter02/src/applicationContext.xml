@@ -23,4 +23,33 @@
 		<property name="x" value="25"></property>
 		<property name="y" value="36"></property>
 	</bean>
+	
+<!-- sample 03 -->
+	<bean id="sungJukDTO" class="sample03.SungJukDTO">
+		<property name="name" value="홍길동"/>
+		<property name="kor" value="97"/>
+		<property name="eng" value="100"/>
+		<property name="math" value="95"/>
+	</bean>
+	
+	<bean id="sungJukImpl" class="sample03.SungJukImpl">
+		<constructor-arg ref ="sungJukDTO"></constructor-arg>
+	</bean>
+	
+	<!-- sample 05 -->
+	<bean id="sungJukDTO2" class="sample05.SungJukDTO2">
+		
+	</bean>
+	<bean id="sungJukOutput" class="sample05.SungJukOutput">
+		<constructor-arg ref ="sungJukDTO2"></constructor-arg>
+	</bean>
+	<bean id="sungJukDelete" class="sample05.SungJukDelete">
+		<constructor-arg ref ="sungJukDTO2"></constructor-arg>
+	</bean>
+	<bean id="sungJukModify" class="sample05.SungJukModify">
+		<constructor-arg ref ="sungJukDTO2"></constructor-arg>
+	</bean>
+	<bean id="sungJukInput" class="sample05.SungJukInput">
+		<constructor-arg ref ="sungJukDTO2"></constructor-arg>
+	</bean>
 </beans>
