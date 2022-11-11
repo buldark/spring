@@ -1,23 +1,26 @@
 package sample05;
 
-import java.util.ArrayList;
 import java.util.List;
 
+import lombok.Setter;
+
 public class SungJukOutput implements SungJuk {
+	@Setter
+	private List<SungJukDTO2> list;
 	
-	private SungJukDTO2 sungJukDTO2 =null;
-	
-	public SungJukOutput() {
-		super();
-		this.sungJukDTO2 = sungJukDTO2;
-	}
-	List<SungJukDTO2> list = new ArrayList<SungJukDTO2>();
+//	public void setList(List<SungJukDTO2> list) {
+//		this.list = list;
+//	}
 	
 	@Override
 	public void execute() {
-		System.out.println("이름 \t 국어\t영어\t수학\t총점\t평균");
-		for(int i=0 ; i<list.size();i++) {System.out.println(list);
+		System.out.println();
+		System.out.println("이름\t국어\t영어\t수학\t총점\t평균");
+		
+		for(SungJukDTO2 sungJukDTO2 : list) {
+			System.out.println(sungJukDTO2);
 		}
+
 	}
 
 }

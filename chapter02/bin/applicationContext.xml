@@ -4,52 +4,77 @@
 	xmlns:context="http://www.springframework.org/schema/context"
 	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
 		http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-4.3.xsd">
-<!-- sample 01 -->
-	<bean id ="messageBeanImpl" class="sample01.MessageBeanImpl">
+
+	<!-- sample01 -->
+	<bean id="messageBeanImpl" class="sample01.MessageBeanImpl">
 		<constructor-arg>
 			<value>사과</value>
 		</constructor-arg>
-		<property name = "cost">
-		<value>5000</value>
+		<property name="cost">
+			<value>5000</value>
 		</property>
-		<property name="qty" value="3"/>
-	</bean>
-<!-- sample 02 -->
-	<bean id ="calcAdd" class="sample02.CalcAdd">
-		<constructor-arg value="25"></constructor-arg>
-		<constructor-arg value="36"></constructor-arg>
-	</bean>
-	<bean id="calcMul" class="sample02.CalcMul">
-		<property name="x" value="25"></property>
-		<property name="y" value="36"></property>
+		<property name="qty" value="3" />
 	</bean>
 	
-<!-- sample 03 -->
+	<!-- sample02 -->
+	<bean id="calcAdd" class="sample02.CalcAdd">
+		<constructor-arg value="25" />
+		<constructor-arg value="36" />
+	</bean>
+	
+	<bean id="calcMul" class="sample02.CalcMul">
+		<property name="x" value="25" />
+		<property name="y" value="36" />
+	</bean>
+	
+	<!-- sample03 -->
 	<bean id="sungJukDTO" class="sample03.SungJukDTO">
-		<property name="name" value="홍길동"/>
-		<property name="kor" value="97"/>
-		<property name="eng" value="100"/>
-		<property name="math" value="95"/>
+		<property name="name" value="홍길동" />
+		<property name="kor" value="97" />
+		<property name="eng" value="100" />
+		<property name="math" value="95" />
 	</bean>
 	
 	<bean id="sungJukImpl" class="sample03.SungJukImpl">
-		<constructor-arg ref ="sungJukDTO"></constructor-arg>
+		<constructor-arg ref="sungJukDTO" />
 	</bean>
 	
-	<!-- sample 05 -->
-	<bean id="sungJukDTO2" class="sample05.SungJukDTO2">
-		
+	<!-- sample05 -->
+	<bean id="helloSpring" class="sample05.HelloSpring"></bean>
+	
+	<bean id="sungJukInput" class="sample05.SungJukInput" scope="prototype">
+		<property name="sungJukDTO2" ref="sungJukDTO2" />
+		<property name="list" ref="arrayList" />
 	</bean>
+	
 	<bean id="sungJukOutput" class="sample05.SungJukOutput">
-		<constructor-arg ref ="sungJukDTO2"></constructor-arg>
+		<property name="list" ref="arrayList" />
 	</bean>
+	
+	<bean id="sungJukUpdate" class="sample05.SungJukUpdate">
+		<property name="list" ref="arrayList" />
+	</bean>
+	
 	<bean id="sungJukDelete" class="sample05.SungJukDelete">
-		<constructor-arg ref ="sungJukDTO2"></constructor-arg>
+		<property name="list" ref="arrayList" />
 	</bean>
-	<bean id="sungJukModify" class="sample05.SungJukModify">
-		<constructor-arg ref ="sungJukDTO2"></constructor-arg>
-	</bean>
-	<bean id="sungJukInput" class="sample05.SungJukInput">
-		<constructor-arg ref ="sungJukDTO2"></constructor-arg>
-	</bean>
+	
+	<bean id="sungJukDTO2" class="sample05.SungJukDTO2" scope="prototype" />
+	
+	<bean id="arrayList" class="java.util.ArrayList" />
 </beans>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
