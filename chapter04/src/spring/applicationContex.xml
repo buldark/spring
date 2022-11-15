@@ -16,12 +16,12 @@
       <property name="password" value="bit"></property>
    </bean> -->
 	
-	<!-- <bean id="dataSource" class ="org.apache.commons.dbcp2.BasicDataSource" 
-	p:driverClassName="oracle.jdbc.driver.OracleDriver" 
-	p:url="jdbc:oracle:thin:@localhost:1521:xe" 
-	p:username="c##java" p:password="bit"> 
-	</bean>
-	-->
+	<!--  <bean id="dataSource" class ="org.apache.commons.dbcp2.BasicDataSource"  -->
+	<!-- p:driverClassName="oracle.jdbc.driver.OracleDriver"  -->
+	<!-- p:url="jdbc:oracle:thin:@localhost:1521:xe"  -->
+	<!-- p:username="c##java" p:password="bit">  -->
+	<!-- </bean> -->
+	
 	<!-- dp.properties 사용 -->
 	<context:property-placeholder location="classpath:spring/db.properties"/><!-- 말 안해도 src부터 기본 위치 -->
 	<bean id="dataSource" class="org.apache.commons.dbcp2.BasicDataSource">

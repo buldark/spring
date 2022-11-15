@@ -2,12 +2,15 @@ package user.service;
 
 import java.util.List;
 
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+
 import lombok.Setter;
 import user.bean.UserDTO;
 import user.dao.UserDAO;
-
+@Service
 public class UserSelectService implements UserService {
-	@Setter
+	@Autowired//setter대신 쓰는 거임
 	private UserDAO userDAO;
 
 	/*

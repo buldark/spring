@@ -2,19 +2,23 @@ package user.service;
 
 import java.util.Scanner;
 
+import org.springframework.beans.factory.annotation.Autowired;
+
+import org.springframework.stereotype.Service;
+
 import user.bean.UserDTO;
 import user.dao.UserDAO;
-
+@Service //Component대시 하여 일을 하는 것을 알려주는 bean 생성 annotaion
 public class UserInsertService implements UserService {
+	@Autowired
 	private UserDAO userDAO;
+	@Autowired
 	private UserDTO userDTO;
 	
-	public void setUserDAO(UserDAO userDAO) {
-		this.userDAO = userDAO;
-	}
-	public void setUserDTO(UserDTO userDTO) {
-		this.userDTO = userDTO;
-	}
+	/*
+	 * public void setUserDAO(UserDAO userDAO) { this.userDAO = userDAO; } public
+	 * void setUserDTO(UserDTO userDTO) { this.userDTO = userDTO; }
+	 */
 	@Override
 	public void execute() {
 		//데이터
