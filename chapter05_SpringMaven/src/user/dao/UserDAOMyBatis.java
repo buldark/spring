@@ -11,7 +11,8 @@ import org.springframework.transaction.annotation.Transactional;
 import lombok.Setter;
 import user.bean.UserDTO;
 
-@Repository//이거 하나면 커밋 클로즈 할 필요 없음 이 자체가 aop기능을 하는 것!!
+@Repository
+@Transactional//이거 하나면 커밋 클로즈 할 필요 없음 이 자체가 aop기능을 하는 것!!
 public class UserDAOMyBatis implements UserDAO {
 	@Autowired
 	private SqlSession sqlSession;
